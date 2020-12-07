@@ -1,0 +1,66 @@
+
+
+@font-face{
+  font-family:'digital-7';
+  src: url("file:///Users/kyle/Documents/dev/calculator/digital-7/digital-7.ttf");
+ }
+
+body{
+  box-sizing: border-box;
+  background-color: #577284;
+}
+div{
+  background-color: #EDF1FF;
+
+}
+
+button{
+  padding: 5px;
+}
+
+.calculator {
+    margin: 0% 50%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 5em);
+    grid-template-rows: minmax(120px,auto)repeat(6, 5em);
+    grid-gap: 1px;
+    border:1px rgba(112, 128, 144, 0.74);
+}
+
+.calculator > button {
+  background-color: #EDF1FF;
+  font-size: 30px;
+  border: 1px slategrey;
+  font-family: digital-7;
+}
+
+.calculator > button:hover {
+  background-color: #FA7A35;
+  opacity: .75;
+  color: whitesmoke 
+}
+
+.screen {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, 0.623);
+  color: #d30808;
+  font-family: digital-7;
+  font-size: 4em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: column;
+  word-wrap: break-word;
+  word-break: break-all;
+  padding: 5px;
+}
+.span-2{
+  grid-column: span 2;
+}
+
+#compute{
+  grid-column: span 3;
+}
