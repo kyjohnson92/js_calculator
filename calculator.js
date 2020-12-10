@@ -17,7 +17,6 @@ computeBtn.addEventListener('click', () => {
     updateScreen(val)
     currentVal = val
     updateOperation()
-
 })
 
 //functionality when a operator button is clicked
@@ -47,8 +46,6 @@ clearBtn.addEventListener('click', () => {
     updateScreen('0')
     resetColors()
     operations.innerText = ''
-
-
 })
 
 //To update screen when current numeral is clicked
@@ -56,6 +53,7 @@ function updateScreen(val){
     screen.innerText = val
 }
 
+//update screen to show previous operation for current screen value
 function updateOperation(){
     if (!operation){
         operations.innerText = previousVal + operand + currentVal
@@ -69,10 +67,6 @@ function numConcat(val){
     currentVal = currentVal + val
 }
 
-function operationConcat(){
-    operation = operation + operand + previousVal
-}
-
 //To clear the color of a clicked operator
 function resetColors(){
     if(clicked === true){
@@ -80,6 +74,7 @@ function resetColors(){
         clicked = false
     }   
 }
+
 //Computation logic
 function compute(){
     let prev = parseFloat(previousVal)
