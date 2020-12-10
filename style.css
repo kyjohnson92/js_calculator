@@ -9,10 +9,6 @@ body{
   box-sizing: border-box;
   background-color: #577284;
 }
-div{
-  background-color: #EDF1FF;
-
-}
 
 button{
   padding: 5px;
@@ -51,16 +47,25 @@ button{
   font-size: 4em;
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: space-around;
   flex-direction: column;
   word-wrap: break-word;
   word-break: break-all;
   padding: 5px;
+  overflow: hidden;
 }
+.previous{
+  font-size: 0.4em;
+
+}
+
 .span-2{
   grid-column: span 2;
 }
 
+.spare{
+  background-color: #EDF1FF;
+}
 #compute{
   grid-column: span 3;
 }
