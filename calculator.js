@@ -1,10 +1,11 @@
 let digits = document.querySelectorAll('.digit')
-let operations = document.querySelector('.previous')
+let history = document.querySelector('.previous')
 let screen = document.querySelector('.current')
 let operators = document.querySelectorAll('.operator')
 let clearBtn = document.querySelector('#all-clear')
 let computeBtn = document.querySelector('#compute')
-let operation;
+
+let operationHistory ='';
 let currentVal ='';
 let previousVal;
 let operand;
@@ -16,7 +17,8 @@ computeBtn.addEventListener('click', () => {
     let val = compute()
     updateScreen(val)
     currentVal = val
-    updateOperation()
+    
+    history.innerText = operationHistory
 })
 
 //functionality when a operator button is clicked
@@ -28,6 +30,7 @@ operators.forEach(operator => operator.addEventListener('click', ()=>{
     currentVal = ''
     operand = operator.innerText
     clicked = true
+    operationHistory += ` ${operand} `
 }));
 
 //Functionality when a numeral is clicked
@@ -38,6 +41,7 @@ digits.forEach(digit => digit.addEventListener('click', () => {
     numConcat(digit.value)
     updateScreen(currentVal)
     resetColors()
+    operationHistory += digit.innerText 
 }));
 
 //Functionality when clearing calculator
@@ -45,7 +49,8 @@ clearBtn.addEventListener('click', () => {
     currentVal = ''
     updateScreen('0')
     resetColors()
-    operations.innerText = ''
+    operationHistory = ''
+    history.innerText = ''
 })
 
 //To update screen when current numeral is clicked
@@ -53,14 +58,6 @@ function updateScreen(val){
     screen.innerText = val
 }
 
-//update screen to show previous operation for current screen value
-function updateOperation(){
-    if (!operation){
-        operations.innerText = previousVal + operand + currentVal
-    } else {
-        operations.innerText = operation
-    }
-}
 
 //To allow >single digit values ie: 4332
 function numConcat(val){
