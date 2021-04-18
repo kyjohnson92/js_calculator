@@ -1,4 +1,4 @@
-## js_calculator
+## js calculator
 
 *To build simple aesthetic calculator app with vanilla js
 
